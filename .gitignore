@@ -1,0 +1,76 @@
+# 二进制文件
+/bin/
+*.exe
+*.out
+
+# 依赖管理
+/go.mod
+/go.sum
+/vendor/
+
+# 开发环境
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# 测试和覆盖率
+/coverage.txt
+*.test
+/.env.test
+
+# 本地配置文件
+/.env
+/config/local.*
+/config/*.local.*
+
+# 日志文件
+*.log
+/logs/
+
+# IDE 特定文件
+.DS_Store
+*.iml
+
+# 数据库相关
+*.db
+*.sqlite
+/db/migrations/*.sql
+
+# 前端构建产物（如果包含前端）
+/dist/
+/node_modules/
+/public/static/js/
+/public/static/css/
+
+# 文档生成
+/docs/swagger*
+/swagger/
+
+# 临时文件
+/tmp/
+*.tmp
+
+# 调试文件
+debug
+*.pprof
+*.prof
+
+# 构建产物
+/.build/
+/.dist/
+
+# JetBrains IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
