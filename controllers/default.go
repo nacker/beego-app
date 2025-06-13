@@ -1,16 +1,22 @@
 package controllers
 
-import "github.com/beego/beego/v2/server/web"
+import (
+	"beego-app/utils"
+	"github.com/beego/beego/v2/server/web"
+)
 
 type MainController struct {
 	web.Controller
 }
 
 func (c *MainController) Index() {
-	c.Data["Website"] = "https://beego.vip"
-	c.TplName = "index.tpl"
+	user := map[string]interface{}{
+		"id":   1,
+		"name": "Alice",
+	}
+	utils.Success(c.Ctx, user)
 }
 
 func (c *MainController) Hello() {
-	c.Ctx.WriteString("Hello Beego v2!")
+	utils.ErrorCode(c.Ctx, utils.CodeUnauthorized)
 }
