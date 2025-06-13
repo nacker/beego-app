@@ -15,8 +15,15 @@ type User struct {
 }
 
 //func init() {
-//	err := DB.AutoMigrate(&User{})
-//	if err != nil {
-//		return
-//	}
+//	// 在数据库连接初始化后执行自动迁移
+//	go func() {
+//		// 等待数据库连接初始化完成
+//		time.Sleep(time.Second)
+//		if DB != nil {
+//			err := DB.AutoMigrate(&User{})
+//			if err != nil {
+//				panic("failed to auto migrate user table: " + err.Error())
+//			}
+//		}
+//	}()
 //}
