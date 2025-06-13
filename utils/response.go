@@ -24,10 +24,11 @@ func Success(ctx *context.Context, data interface{}) {
 }
 
 // 错误响应
-func Error(ctx *context.Context, code int, message string) {
+func ErrorCode(ctx *context.Context, code int, message string, data interface{}) {
 	resp := ApiResponse{
 		Code:    code,
 		Message: message,
+		Data:    data,
 	}
 	if err := ctx.Output.JSON(resp, false, false); err != nil {
 		// 写日志更合适
@@ -35,6 +36,6 @@ func Error(ctx *context.Context, code int, message string) {
 	}
 }
 
-func ErrorCode(ctx *context.Context, code int) {
-	Error(ctx, code, MsgForCode(code))
+func Error(ctx *context.Context, code int, data interface{}) {
+	ErrorCode(ctx, code, MsgForCode(code), data)
 }

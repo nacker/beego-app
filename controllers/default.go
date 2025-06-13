@@ -18,5 +18,5 @@ func (c *MainController) Index() {
 }
 
 func (c *MainController) Hello() {
-	utils.ErrorCode(c.Ctx, utils.CodeUnauthorized)
+	utils.Error(c.Ctx, utils.CodeUnauthorized, nil)
 }
