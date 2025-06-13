@@ -2,8 +2,6 @@ package models
 
 import (
 	"time"
-
-	"github.com/beego/beego/v2/client/orm"
 )
 
 type User struct {
@@ -16,6 +14,9 @@ type User struct {
 	UpdateTime time.Time `orm:"auto_now;type(datetime)"`     // 更新时间
 }
 
-func init() {
-	orm.RegisterModel(new(User))
-}
+//func init() {
+//	err := DB.AutoMigrate(&User{})
+//	if err != nil {
+//		return
+//	}
+//}

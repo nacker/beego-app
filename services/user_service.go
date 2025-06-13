@@ -5,12 +5,11 @@ import (
 )
 
 func GetUserByID(id int) (*models.User, error) {
-	var user models.User
-	err := models.DB.First(&user, id).Error
-	if err != nil {
+	var u models.User
+	if err := models.DB.First(&u, id).Error; err != nil {
 		return nil, err
 	}
-	return &user, nil
+	return &u, nil
 }
 
 func Login(username, password string) (*models.User, error) {

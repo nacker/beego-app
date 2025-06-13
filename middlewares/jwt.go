@@ -11,12 +11,12 @@ import (
 func JWTMiddleware(ctx *context.Context) {
 
 	// 排除不需要验证的路由
-	excludePaths := []string{"/", "/hello", "/user/login", "/user/register"}
-	for _, path := range excludePaths {
-		if ctx.Request.URL.Path == path {
-			return // 跳过中间件逻辑
-		}
-	}
+	//excludePaths := []string{"/", "/hello", "/user/login", "/user/register"}
+	//for _, path := range excludePaths {
+	//	if ctx.Request.URL.Path == path {
+	//		return // 跳过中间件逻辑
+	//	}
+	//}
 
 	// 从请求头中获取 Authorization 字段
 	authHeader := ctx.Request.Header.Get("Authorization")
